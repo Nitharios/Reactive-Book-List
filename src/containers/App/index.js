@@ -51,11 +51,6 @@ class App extends Component {
         <BookListAppTitle
           title="Dash" />
 
-        <NewBookForm
-          message="Enter New Book Here"
-          addBook={ this.addBook.bind(this) }
-        />
-
         <BookFilterInput
           message="Enter Search"
           searchFor={ this.setSearchFor.bind(this) }
@@ -64,6 +59,11 @@ class App extends Component {
         <BookList 
           books={ this.state.bookList } 
           searchFor={ this.state.searchFor }
+        />
+        
+        <NewBookForm
+          message="Enter New Book Here"
+          addBook={ this.addBook.bind(this) }
         />
       </div>
     );

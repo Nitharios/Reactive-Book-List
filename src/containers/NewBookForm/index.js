@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class NewBookForm extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       title : '',
       author : ''
@@ -33,6 +32,7 @@ class NewBookForm extends Component {
   render() {
     return(
       <div>
+        <div>{ this.props.message }</div>
         <form onSubmit={ this.handleSubmit.bind(this) }>
           <input type="text" placeholder="title" onChange={this.handleChangeTitle.bind(this)} />
           <input type="text" placeholder="author" onChange={this.handleChangeAuthor.bind(this)} />

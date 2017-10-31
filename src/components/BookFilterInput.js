@@ -6,7 +6,7 @@ const BookFilterInput = ({ searchFor }) => {
   return(
     <div className="book-filter">
       <input type="text" placeholder="search" onChange={ searchFor } />
-      <button type="submit">Clear</button>
+      <button type="reset">Clear</button>
     </div> 
   )
 }

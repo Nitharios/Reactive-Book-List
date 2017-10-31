@@ -12,13 +12,20 @@ class NewBookForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.addBook(this.state.title);
-    this.props.addBook(this.state.author);
+    this.props.addBook({
+      title : this.state.title,
+      author : this.state.author 
+    })
   }
 
-  handleChange(e) {
+  handleChangeTitle(e) {
     this.setState({
       title : e.target.value,
+    })
+  }
+
+  handleChangeAuthor(e) {
+    this.setState({
       author : e.target.value
     })
   }
@@ -27,8 +34,8 @@ class NewBookForm extends Component {
     return(
       <div>
         <form onSubmit={ this.handleSubmit.bind(this) }>
-          <input type="text" name="title" placeholder="title" onChange={this.handleChange.bind(this)} />
-          <input type="text" name="author" placeholder="author" onChange={this.handleChange.bind(this)} />
+          <input type="text" placeholder="title" onChange={this.handleChangeTitle.bind(this)} />
+          <input type="text" placeholder="author" onChange={this.handleChangeAuthor.bind(this)} />
           <input type="submit" value="Submit Book" />
         </form>
       </div>

@@ -27,13 +27,13 @@ class App extends Component {
     })
   }
 
-  componentWillMount() {
+  componentDidMount() {
     getBooks()
     .then(bookList => {
       this.setState({
         bookList
       }) 
-    })
+    })    
   }
 
   render() {
@@ -43,7 +43,7 @@ class App extends Component {
         Hello World!
 
         <NewBookForm
-          message="Enter New Book Title Here"
+          message="Enter New Book Here"
           addBook={ this.addBook.bind(this) }
         />
 

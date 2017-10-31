@@ -1,22 +1,11 @@
 import React from 'react';
-import BookListItem from './BookListItem';
 
-const BookList = ({ books }) => {
+const BookListAppTitle = ({ title }) => {
   return(
-    <div className="book-list">
-      {
-        books.map((book, idx) => {
-          return(
-            <BookListItem 
-              title = { book.title } 
-              author = { book.author }
-              key = { idx } 
-            />
-          )
-        })
-      }
+    <div className="app-title">
+      { title }
     </div>
   )
 }
 
-export default BookList;
+export default BookListAppTitle;

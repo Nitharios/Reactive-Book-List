@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { getBooksFromFakeXHR as getBooks } from '../../lib/books.db';
 import { addBookToFakeXHR as addBook} from '../../lib/books.db';
-import BookList from '../../components/BookListAppTitle';
-import NewBookForm from '../NewBookForm'
+import BookListAppTitle from '../../components/BookListAppTitle';
+import BookList from '../BookList';
+import NewBookForm from '../NewBookForm';
 
 class App extends Component {
   constructor() {
@@ -40,7 +41,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        Hello World!
+        <BookListAppTitle
+          title="Dash" />
 
         <NewBookForm
           message="Enter New Book Here"

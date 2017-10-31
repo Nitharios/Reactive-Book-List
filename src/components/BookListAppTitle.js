@@ -7,7 +7,11 @@ const BookList = ({ books }) => {
       {
         books.map((book, idx) => {
           return(
-            <BookListItem title = { book.title } key = { idx } />
+            <BookListItem 
+              title = { book.title } 
+              author = { book.author }
+              key = { idx } 
+            />
           )
         })
       }

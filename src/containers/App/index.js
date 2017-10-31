@@ -13,12 +13,13 @@ class App extends Component {
     }
   }
 
-  addBook(newBookTitle) {
-    let newTitle = {
-      title : newBookTitle
+  addBook(book) {
+    let newBook = {
+      title : book.title,
+      author : book.author
     }
 
-    addBook(newTitle)
+    addBook(newBook)
     .then(bookList => {
       this.setState({
         bookList
@@ -36,6 +37,7 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="App">
         Hello World!

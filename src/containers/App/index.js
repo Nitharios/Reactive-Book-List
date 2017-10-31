@@ -4,14 +4,21 @@ import { addBookToFakeXHR as addBook} from '../../lib/books.db';
 import BookListAppTitle from '../../components/BookListAppTitle';
 import BookList from '../BookList';
 import NewBookForm from '../NewBookForm';
+import BookFilterInput from '../../components/BookFilterInput';
 
 class App extends Component {
   constructor() {
     super();
   
     this.state = {
-      bookList : []
+      bookList : [],
+      searchFor : ''
     }
+  }
+
+  setSearchFor(e) {
+    const searchFor = e.target.value;
+    this.setState({ searchFor })
   }
 
   addBook(book) {
@@ -49,7 +56,15 @@ class App extends Component {
           addBook={ this.addBook.bind(this) }
         />
 
-        <BookList books={this.state.bookList} />
+        <BookFilterInput
+          message="Enter Search"
+          searchFor={ this.setSearchFor.bind(this) }
+        />
+
+        <BookList 
+          books={ this.state.bookList } 
+          searchFor={ this.state.searchFor }
+        />
       </div>
     );
   }

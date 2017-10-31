@@ -1,11 +1,21 @@
 import React from 'react';
 import BookListItem from '../../components/BookListItem';
 
-const BookList = ({ books }) => {
+const BookList = ({ books, searchFor }) => {
+  let searchParam = searchFor.toLowerCase();
+  
   return(
     <div className="book-list">
       {
-        books.map((book, idx) => {
+        books
+        .filter(book => {
+          return(
+            searchFor === '' ||
+            book.title.toLowerCase().indexOf(searchParam) >= 0 ||
+            book.author.toLowerCase().indexOf(searchParam) >= 0
+          );
+        })
+        .map((book, idx) => {
           return(
             <BookListItem 
               title = { book.title } 

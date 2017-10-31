@@ -1,1 +1,1 @@
-import { getBookByIdFromFakeXHR as getBookById } from '../../lib/books.db';
+import React from 'react';

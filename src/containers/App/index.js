@@ -33,10 +33,6 @@ class App extends Component {
         bookList
       }) 
     })
-
-  }
-
-  componentDidMount() {
   }
 
   render() {
@@ -48,7 +44,6 @@ class App extends Component {
           message="Enter New Book Title Here"
           addBook={ this.addBook.bind(this) }
         />
-
 
         <BookList books={this.state.bookList} />
       </div>

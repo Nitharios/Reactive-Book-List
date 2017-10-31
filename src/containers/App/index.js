@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getBooksFromFakeXHR as getBooks } from '../../lib/books.db';
-import { addBookToFakeXHR as addBook} from '../../lib/books.db';
+import { addBookToFakeXHR } from '../../lib/books.db';
 import BookListAppTitle from '../../components/BookListAppTitle';
 import BookList from '../BookList';
 import NewBookForm from '../NewBookForm';
@@ -27,7 +27,7 @@ class App extends Component {
       author : book.author
     }
 
-    addBook(newBook)
+    addBookToFakeXHR(newBook)
     .then(bookList => {
       this.setState({
         bookList
@@ -60,7 +60,7 @@ class App extends Component {
           books={ this.state.bookList } 
           searchFor={ this.state.searchFor }
         />
-        
+
         <NewBookForm
           message="Enter New Book Here"
           addBook={ this.addBook.bind(this) }

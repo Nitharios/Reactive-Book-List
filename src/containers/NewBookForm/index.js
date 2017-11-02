@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { addBook } from '../../actions/books';
 
 class NewBookForm extends Component {
   constructor(props) {
@@ -6,7 +9,7 @@ class NewBookForm extends Component {
     this.state = {
       title : '',
       author : ''
-    }
+    };
   }
 
   handleSubmit(e) {
@@ -14,24 +17,24 @@ class NewBookForm extends Component {
     this.props.addBook({
       title : this.state.title,
       author : this.state.author 
-    })
+    });
 
     this.setState({
       title : '',
       author : ''
-    })
+    });
   }
 
   handleChangeTitle(e) {
     this.setState({
       title : e.target.value,
-    })
+    });
   }
 
   handleChangeAuthor(e) {
     this.setState({
       author : e.target.value
-    })
+    });
   }
 
   render() {
@@ -48,4 +51,17 @@ class NewBookForm extends Component {
   }
 }
 
-export default NewBookForm;
+const mapDispatchToProps = (dispatch) => {
+  return{
+    addBook : (book) => {
+      dispatch(addBook(book));
+    }
+  }
+}
+
+const ConnectedNewBookForm = connect(
+  null,
+  mapDispatchToProps
+)(NewBookForm);
+
+export default ConnectedNewBookForm;

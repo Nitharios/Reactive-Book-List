@@ -5,12 +5,29 @@
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.15"
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.0.15",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "React exercise - extendable for Redux",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nitharios/Reactive-Book-List.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nitharios/Reactive-Book-List/issues"
+  },
+  "homepage": "https://github.com/Nitharios/Reactive-Book-List#readme"
 }

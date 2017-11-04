@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Book = ({ title, author }) => {
+const Book = ({ id, title, author }) => {
   return(
-    <div className="book">
-      <div>Book Title: { title }</div>
-      <div>Author: { author }</div>
-    </div>
+    <Link to={`/books/${id}`}>
+      <div className="book">
+        <div>Book Title: { title }</div>
+        <div>Author: { author }</div>
+      </div>
+    </Link>
   )
 }
 

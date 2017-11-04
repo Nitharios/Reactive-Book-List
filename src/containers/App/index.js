@@ -5,7 +5,6 @@ import { loadBooks } from '../../actions/books';
 // import { addBookToFakeXHR } from '../../lib/books.db';
 import BookListAppTitle from '../../components/BookListAppTitle';
 import BookList from '../BookList';
-import NewBookForm from '../NewBookForm';
 import BookFilterInput from '../../components/BookFilterInput';
 
 class App extends Component {
@@ -64,8 +63,6 @@ class App extends Component {
           books={ this.props.books } 
           searchFor={ this.state.searchFor }
         />
-
-        <NewBookForm />
       </div>
     );
   }

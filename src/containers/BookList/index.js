@@ -18,6 +18,7 @@ const BookList = ({ books, searchFor }) => {
         .map((book, idx) => {
           return(
             <BookListItem 
+              id = { book._id }
               title = { book.title } 
               author = { book.author }
               key = { idx } 

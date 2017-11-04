@@ -2,6 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+
 import thunk from 'redux-thunk';
 import reducers from './reducers';
 import App from './containers/App';
